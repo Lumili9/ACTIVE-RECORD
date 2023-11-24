@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -19,4 +21,5 @@ class DBConnectionTest {
         assertEquals(con, DBConnection.getConnection());
 
     }
+
 }

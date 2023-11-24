@@ -42,4 +42,25 @@ class PersonneTest {
         assertNull(Personne.findById(p.id));
     }
 
+    @Test
+    public void testFindById(){
+        Personne p = Personne.findById(this.id);
+        assertNotNull(p);
+        assertEquals(p.id,this.id);
+    }
+
+    @Test
+    public void testFindByName(){
+        Personne p = new Personne("test","test");
+        p.save();
+        assertEquals(p.findByName("test").get(0).id,p.id);
+    }
+
+    @Test
+    public void testFindAll(){
+        Personne p = new Personne("test","test");
+        p.save();
+        assertEquals(p.findAll().get(0).id,p.id);
+    }
+
 }
